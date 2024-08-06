@@ -12,7 +12,8 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Acones",
-            targets: ["Acones"]),
+            targets: ["Acones"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/swhitty/SwiftDraw.git", from: "0.17.0"),
@@ -27,6 +28,7 @@ let package = Package(
         ),
         .testTarget(
             name: "AconesTests",
-            dependencies: ["Acones"]),
+            dependencies: ["Acones"]
+        ),
     ]
 )

@@ -34,6 +34,7 @@ class Acones {
             }
         }
     }
+
 }
 
 
@@ -59,37 +60,6 @@ struct SVGProcessor: ImageProcessor {
         }
     }
 
-}
-
-
-@IBDesignable
-class AconesImageView: UIImageView {
-
-    @IBInspectable var name: String? {
-        didSet {
-            guard let iconName = name else { return }
-            Acones.shared.fetchIcon(named: iconName) { [weak self] image in
-                self?.image = image
-            }
-        }
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
-    }
-
-    private func commonInit() {
-        guard let iconName = name else { return }
-        Acones.shared.fetchIcon(named: iconName) { [weak self] image in
-            self?.image = image
-        }
-    }
 }
 
 

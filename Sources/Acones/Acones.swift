@@ -9,12 +9,12 @@
 import UIKit
 import Kingfisher
 
-class Acones {
+public class Acones {
 
-    static let shared = Acones()
+    public static let shared = Acones()
     private let baseURL = "https://api.iconify.design/"
 
-    func fetchIcon(named name: String?, completion: @escaping (UIImage?) -> Void) {
+    public func fetchIcon(named name: String?, completion: @escaping (UIImage?) -> Void) {
 
         guard let iconName = name,
               let url = URL(string: "\(baseURL)\(iconName).svg")
